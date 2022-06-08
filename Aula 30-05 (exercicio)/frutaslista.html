@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Lista de Frutas</p>
+    <button onclick="lista()">Ver Lista</button>
+    <div id="dados">
+
+    </div>
+    <script>
+        var fruit = localStorage.getItem("frutaslista")
+        var recebedados = fruit.split(",")
+        console.log(fruit)
+        
+        function lista(){
+            var list = '<ol>'
+            numero = 0
+            for(let i = 0 ; i < recebedados.length ; i++){
+                list += `<li>${recebedados[i]}</li>`
+               
+            }
+            list += '<ol>' 
+        document.getElementById("dados").innerHTML = list
+
+        }
+    </script>
+</body>
+</html>

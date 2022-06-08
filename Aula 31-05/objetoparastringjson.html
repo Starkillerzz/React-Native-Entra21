@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var carro = {
+            marca: "ford",
+            modelo: "Ka",
+            ano: 2020,
+            cor: "vermelho"
+        }
+        console.log(carro)
+        console.log(carro.marca)
+
+        var stringcarro = JSON.stringify(carro)
+        console.log(stringcarro)
+        console.log(stringcarro.marca)
+        localStorage.setItem("carro" , stringcarro)
+    </script>
+</body>
+</html>

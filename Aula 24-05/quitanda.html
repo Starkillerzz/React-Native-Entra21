@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 300px;
+            margin: auto;
+        }
+
+        input {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <label>Descrição</label>
+        <input type="text" id="descricao" placeholder="informe descrição do produto" />
+
+        <label>Preço</label>
+        <input type="text" id="preco" placeholder="informe preço do produto" />
+
+        <label>Estoque</label>
+        <input type="text" id="estoque" placeholder="informe estoque do produto" />
+        <div>
+            <button onclick="comoMostrar()">Salvar</button>
+            <input onclick="trocaFormaVisualizar()" type="checkbox" id="tabela">Mostrar em tabela? </input>
+        </div>
+        <div>
+            <table id="tableHide">
+                <thead>
+                    <tr>
+                        <th>Descrição</th>
+                        <th>Preço</th>
+                        <th>Estoque</th>
+                    </tr>
+                </thead>
+                <tbody id="dadosTabela">
+                    <!--dados inseridos via função
+                <tr>
+                    <td>feijão</td>
+                    <td>7,89</td>
+                    <td>10</td>
+                </tr>-->
+                </tbody>
+            </table>
+
+        </div>
+        <div id="paragrafo">
+
+        </div>
+    </div>
+    <script>
+        var produtos = []
+        function trocaFormaVisualizar() {
+            if (document.getElementById("tabela").checked) {
+
+                document.getElementById("paragrafo").style = "display:none"
+                document.getElementById("tableHide").style = "display:block"
+                verTabela()
+                
+            } else {
+
+                document.getElementById("paragrafo").style = "display:block"
+                document.getElementById("tableHide").style = "display:none"
+                verparagrafo()
+                
+
+            }
+        }
+        function comoMostrar() {
+            if (document.getElementById("tabela").checked) {
+                add(verTabela)
+
+                document.getElementById("paragrafo").style = "display:none"
+                document.getElementById("tableHide").style = "display:block"
+            } else {
+                add(verparagrafo)
+                document.getElementById("paragrafo").style = "display:block"
+                document.getElementById("tableHide").style = "display:none"
+
+            }
+        }
+
+        function add(callback) {
+            //atribui valores para o objeto
+            var obj = {
+                descricao: document.getElementById("descricao").value,
+                preco: document.getElementById("preco").value,
+                estoque: document.getElementById("estoque").value
+
+            }
+            if (obj.descricao == "") {
+                alert("Digite a descrição do item!")
+                document.getElementById("descricao").focus()
+                return
+            } else {
+                obj.descricao = document.getElementById("descricao").value
+            }
+            if (obj.preco == "") {
+                alert("Digite o preço do item!")
+                document.getElementById("preco").focus()
+                return
+            } else {
+                obj.preco = document.getElementById("preco").value
+
+            }
+            if (obj.estoque == "") {
+                alert("Digite a quantidade em estoque!")
+                document.getElementById("estoque").focus()
+                return
+            } else {
+                obj.estoque = document.getElementById("estoque").value
+
+            }
+
+            //colocar objeto no array produtos
+            produtos.push(obj)
+            limpar()
+            callback()
+
+
+        }
+        function limpar() {
+            document.getElementById("descricao").value = ""
+            document.getElementById("preco").value = ""
+            document.getElementById("estoque").value = ""
+
+        }
+
+        function verTabela() {
+            var linha = ""
+            for (let i = 0; i < produtos.length; i++) {
+                linha += `<tr><td>${produtos[i].descricao}</td>
+                      <td>${produtos[i].preco}</td>
+                      <td>${produtos[i].estoque}</td>
+                  </tr>`
+
+            }
+            console.log(linha)
+            document.getElementById("dadosTabela").innerHTML = linha;
+        }
+        function verparagrafo() {
+            var linha = ''
+            for (let i = 0; i < produtos.length; i++) {
+                linha += `<p>${produtos[i].descricao} ${produtos[i].preco} ${produtos[i].estoque}</p>`
+                  
+
+            }
+            document.getElementById("paragrafo").innerHTML = linha;
+        }
+
+    </script>
+
+</body>
+
+</html>

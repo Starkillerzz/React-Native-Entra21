@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="numero" type="number" placeholder="insira um número"/>
+    <button onclick="numero()">Clique aqui</button>
+    <hr>
+    <p id="mostrar"></p>
+
+    <script>
+        function numero(){
+            let numero = document.getElementById("numero").value
+            if(numero % 2 == 0){
+                document.getElementById("mostrar").innerHTML = "O número informado é par"
+            }else{
+                document.getElementById("mostrar").innerHTML = "O número informado é ímpar"
+
+            }
+
+        }
+
+    </script>
+
+</body>
+</html>

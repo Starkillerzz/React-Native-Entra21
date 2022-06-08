@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="nome" type="text" placeholder="Informe o seu Nome"/>
+    <input id="sobrenome" type="text" placeholder="Informe o seu Sobrenome"/>
+    <button onclick="geradorNome()">Clique para gerar seu nome</button>
+    <hr> 
+    <p id="nomeCompleto"></p>
+
+    <script>
+        function geradorNome(){
+            let nome = document.getElementById("nome").value 
+            let sobrenome = document.getElementById("sobrenome").value 
+
+            document.getElementById("nomeCompleto"). innerHTML = `Seu nome completo é: ${nome} ${sobrenome}`
+
+        }
+
+    </script>
+
+
+
+</body>
+</html>

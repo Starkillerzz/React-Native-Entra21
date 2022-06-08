@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 300px;
+            margin: auto;
+        }
+        .tabela{
+            display: none;
+        }
+
+        input{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <label>Descrição</label>
+        <input type="text" id="descricao" placeholder="informe descrição do produto"/>
+
+        <label>Preço</label>
+        <input type="text" id="preco" placeholder="informe preço do produto"/>
+
+        <label>Estoque</label>
+        <input type="text" id="estoque" placeholder="informe estoque do produto"/>
+        <div>
+            <button onclick="teste() ; limpar()">Salvar</button>
+            <input type="checkbox" id="lista">Mostrar em lista? </input>
+        </div>
+        <div id="dados">
+
+        </div>
+        
+    </div>
+    <script>
+        var produtos = []
+        function teste(){
+            if(document.getElementById("lista").checked){
+            add(verlista)
+        }else{
+            add(verDados)
+        }
+        }
+        function add(callback){
+            //atribui valores para o objeto
+            var obj = {
+            descricao: document.getElementById("descricao").value,
+            preco: document.getElementById("preco").value,
+            estoque: document.getElementById("estoque").value
+
+        }
+            if(obj.descricao == ""){
+                alert("Digite a descrição do item!")
+                document.getElementById("descricao").focus()
+                return
+            }else{
+                pessoas = parseFloat(obj.descricao)
+                
+            }
+            if(obj.preco == ""){
+                alert("Digite o preço do item!")
+                document.getElementById("preco").focus()
+                return
+            }else{
+                gramas = parseFloat(preco)
+
+            }    
+            if(obj.estoque == ""){
+                alert("Digite a quantidade em estoque!")
+                document.getElementById("estoque").focus()
+                return
+            }else{
+                gramas = parseFloat(preco)                    
+            }
+
+        //colocar objeto no array produtos
+        produtos.push(obj) 
+        callback()               
+
+}
+    function limpar(){
+
+        document.getElementById("descricao").value = ""
+        document.getElementById("preco").value = ""
+        document.getElementById("estoque").value = ""
+        verDados()
+    
+}
+
+function verDados(){
+    var linha = ""
+    for (let i = 0; i < produtos.length ; i++ ){
+        linha += `<p>${produtos[i].descricao}</p>
+                  <p>${produtos[i].preco}</p>
+                  <p>${produtos[i].estoque}</p>`
+
+    }
+            console.log(linha)
+            document.getElementById("dados").innerHTML = linha
+}
+function verlista(){
+    var linha = '<ol>'
+    for (let i = 0; i < produtos.length ; i++ ){
+        linha += `<li>${produtos[i].descricao}</li>
+                  <li>${produtos[i].preco}</li>
+                  <li>${produtos[i].estoque}</li>`
+
+    }
+        linha += '<ol>'
+        document.getElementById("dados").innerHTML = linha;
+    
+}
+        
+    </script>
+
+</body>
+</html>

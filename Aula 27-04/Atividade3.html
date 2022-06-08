@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="nome" type="text" placeholder="Informe o seu nome"/> <br>
+    <input id="n1" type="number" placeholder="Informe a N1"/> <br>
+    <input id="n2" type="number" placeholder="Informe a N2"/> <br>
+    <input id="n3" type="number" placeholder="Informe a N3"/> <br>
+
+    <button onclick="media()">Clique para calcular a média</button>
+    <hr>
+    <p id="resultado"></p>
+
+    <script>
+        function media(){
+            let nome = document.getElementById("nome").value
+            let n1 = document.getElementById("n1").value
+            let n2 = document.getElementById("n2").value
+            let n3 = document.getElementById("n3").value
+
+            if(nome == ""){
+                alert("Preencha o nome do aluno!")
+                document.getElementById("nome").focus()
+                return
+            }
+            if(n1 == ""){
+                alert("Preencha a nota 1!")
+                document.getElementById("n1").focus()
+                return
+            }else{
+                
+                n1 = parseFloat(n1)
+                    if(n1 > 10){
+                alert("Nota 1 deve ser de 0 a 10")
+                document.getElementById("n1").focus()
+                return
+                    }    
+            }
+            if(n2 == ""){
+                alert("Preencha a nota 2!")
+                document.getElementById("n2").focus()
+                return
+            }else{
+                
+                n2 = parseFloat(n2)
+                    if(n2 > 10){
+                alert("Nota 2 deve ser de 0 a 10")
+                document.getElementById("n2").focus()
+                return
+                    }    
+            }
+            if(n3 == ""){
+                alert("Preencha a nota 3!")
+                document.getElementById("n3").focus()
+                return
+            }else{
+                
+                n3 = parseFloat(n3)
+                    if(n3 > 10){
+                alert("Nota 3 deve ser de 0 a 10")
+                document.getElementById("n3").focus()
+                return
+                    }    
+            }
+
+            let media = (n1+n2+n3)/3
+
+            if(media >= 7){
+
+                document.getElementById("resultado").innerHTML = `${nome}, a sua média é ${media.toFixed(2)}, você está aprovado!`
+
+            }else{
+
+                document.getElementById("resultado").innerHTML = `${nome}, a sua média é ${media.toFixed(2)}, você está reprovado!`
+
+            }
+
+        }
+
+    </script>
+
+
+
+
+</body>
+</html>

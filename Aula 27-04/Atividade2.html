@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id= "valor" type="number" placeholder="Informe um Valor"/> <br>
+    <input id= "taxa" type="number" placeholder="Informe a Taxa"/> <br>
+    
+
+    <button onclick="calcular()">Calcular</button>
+    <hr>
+    <p id="resultado"></p>
+
+
+    <script>
+        function calcular(){
+            let valor = document.getElementById("valor").value
+            let taxa = document.getElementById("taxa").value
+
+            if(valor == ""){
+                alert("Digite um valor!")
+                document.getElementById("valor").focus()
+                return
+            }else{
+                valor = parseFloat(valor)
+                document.getElementById("valor").focus()
+
+            }
+            if(taxa == ""){
+                alert("Digite uma taxa!")
+                document.getElementById("taxa").focus()
+                return
+            }else{
+                taxa = parseFloat(taxa)
+                document.getElementById("taxa").focus()
+
+            }
+
+            let aumento = (valor*(taxa/100)) + valor
+
+
+            document.getElementById("resultado").innerHTML = `O valor é ${aumento}`
+
+        }
+
+    </script>
+
+
+</body>
+</html>

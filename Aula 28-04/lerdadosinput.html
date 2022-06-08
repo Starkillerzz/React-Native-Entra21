@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Olá pessoal</p>
+    <input id="nome" type="text" placeholder="Informe nome">
+    <input id="sobrenome" type="text" placeholder="Informe sobrenome">
+
+    <button onclick="transferenome()">Clique aqui</button>
+    <input type="text" id="recebeNome" readonly/>
+
+    <script>
+        function transferenome(){
+            let nome = document.getElementById("nome").value
+            if(nome == ""){
+                alert("Digite um nome!")
+                document.getElementById("nome").focus()
+                return
+            }
+
+            let sobrenome = document.getElementById("sobrenome").value
+            if(sobrenome == ""){
+                alert("Digite um sobrenome!")
+                document.getElementById("sobrenome").focus()
+                return
+            }
+
+            document.getElementById("recebeNome").value = `${nome} ${sobrenome}`
+
+        }  
+
+
+    </script>
+
+</body>
+</html>

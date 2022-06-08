@@ -1,0 +1,19 @@
+{
+    "clientes":[
+        {
+            "id": 1,
+            "nome": "José da Silva",
+            "email": "jose@gmail.com",
+            "fone": "123-45678"
+        },
+        {
+            "id": 2,
+            "nome": "Maria da Silva",
+            "email": "maria@gmail.com",
+            "fone": "456-9875"
+        }
+    ], 
+    "produtos":[{
+        "teste":"isso é um teste"
+    }]
+}

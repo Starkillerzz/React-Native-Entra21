@@ -1,0 +1,111 @@
+* {
+
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+}
+    
+
+.container{
+    display: flex;
+    text-align: center;
+    vertical-align: middle;
+    height: 12vh;
+    align-items: center;
+    font-size: 50PX;
+    font-style: italic;
+    background-color: skyblue;
+    
+    
+        
+}
+.logo{
+    height: 30px;
+    background-color: blue;
+}
+.menucontainer{
+    display: flex;
+    align-items: center;
+    
+    background-image: linear-gradient(skyblue, rgb(44, 44, 44),black, black);
+
+    
+
+}
+.containerlogin{
+    font-family: "Courier New", "Monaco", "monospace";
+    
+
+}
+.rodape{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+
+}
+
+.dropdown {
+    display: block;
+    padding: 10px;
+}
+
+.dropdown:hover .dropdown-content  {
+    display: block;
+    margin-left: 120px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+}
+
+iframe{
+    width: 100vw;
+    height: 83vh;
+    background-image: url(https://static.vecteezy.com/system/resources/previews/004/466/306/original/light-blue-background-design-white-and-blue-background-design-clean-and-modern-design-illustration-vector.jpg);
+    background-size: cover;
+
+}
+
+i{
+    vertical-align: middle;
+}
+
+a{  
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    margin-left: auto;
+    z-index: 1;
+    background-color: skyblue;
+    width: 150PX;
+    height: 30PX;
+    font-family:  "Courier New", "Monaco", "monospace";
+    font-size: 17PX;
+    border-radius: 50PX;
+    background-color: rgb(213, 225, 238);
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    vertical-align: middle;
+
+}
+img{
+max-height: auto;
+height: 90px;
+margin-left: 20px;
+
+
+}
+label{
+    color: white;
+}
+p{
+    color: black;
+    text-shadow: 2px 2px 5px rgb(0, 162, 255);
+    margin-left: 500px;  
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}

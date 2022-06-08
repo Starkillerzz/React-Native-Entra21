@@ -1,0 +1,10 @@
+1. Na pagina .html inserir nome de frutas em um array
+ e armazenar no localstorage
+
+2. na pagina2.html listar as frutas inseridas
+em formato de lista numerada
+ 
+ 3. quando carregar o index.html, o botão logout deve aparecer
+ caso exista um usuario logado. Caso não exista, o texto do botão
+ dever ser "login" e deve direcionar para a tela onde
+ o usuario possa logar.

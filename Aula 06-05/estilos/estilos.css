@@ -1,0 +1,80 @@
+* {
+
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+}
+
+.containerprincipal{
+    display: flex;
+    height: 8vh;
+    align-items: center;
+    justify-content: space-between;
+    background-color:black;
+}
+.menucontainer{
+    background-color:black;  
+}
+
+.menucontainer a{
+    color: red;
+    text-decoration: none;
+    background-color: black;
+    margin: 10px;
+    border-radius: 9px;
+
+}
+
+.menucontainer :hover{
+        background-color: red;
+        color: black;
+
+}
+
+iframe{
+    width: 100vw;
+    height: 83vh;
+}
+
+.rodape{
+    background-color:black;
+    height: 7vh;
+    color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+button{
+    background-color: black;
+    color: white;
+    border-color: red;
+    margin-right: 10px;
+
+}
+
+.containerlogo{
+    background-color: black;
+}
+
+img{
+    max-height: auto;
+    height: 100px;
+}
+
+
+
+
+
+
+
+<a href="SobreNos.html" target="centro">Sobre Nós</a>
+<a href="Cadastro.html" target="centro">Cadastro</a>
+<a href="Consulta.html" target="centro">Consulta</a>
+<a href="OndeEstamos.html" target="centro">Onde Estamos</a>
+
+
+

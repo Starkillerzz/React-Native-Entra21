@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="numero" type="number" placeholder="Insira um número"/>
+    <button onclick="fatorial()">Calcular Fatorial</button>
+    <p id="resultado"></p>
+
+    <script>
+        function fatorial(){
+            let numero =  document.getElementById("numero").value 
+            let contador = numero
+            let calculo = numero
+
+            if(numero == ""){
+                alert("digite um número!")
+                document.getElementById("numero").focus()
+                return
+
+            }else{
+                numero = parseFloat(numero)
+                contador = parseFloat (contador)
+                calculo = parseFloat (calculo)
+
+            }
+            while(numero > 1){
+                numero--
+                contador = contador * numero 
+                
+            }
+
+                document.getElementById("resultado"). innerHTML = `O Fatorial de ${calculo} é ${contador}`
+            
+
+        }
+
+    </script>
+
+</body>
+</html>

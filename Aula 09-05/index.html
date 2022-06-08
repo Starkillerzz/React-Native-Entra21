@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Teste</title>
+    <style>
+        i{
+            vertical-align: middle;
+        }
+
+
+        .mostrador {
+            display: flex;
+            background-color:beige;
+        }
+
+        .dropdown {
+            display: block;
+            padding: 10px;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="mostrador">
+        <div class="dropdown">
+            <button style="background-color: black; color: white; border-radius: 10px; font-size: 18px;"> <i class="material-icons">assignment_ind</i>Cadastro</button>
+            <div class="dropdown-content">
+                <a style="font-size: 20px;" href="#"> <i class="material-icons">list</i>Clientes</a> <br>
+                <a style="font-size: 20px;" href="#"> <i class="material-icons">list</i>Produtos</a> <br>
+                <a style="font-size: 20px;" href="#"> <i class="material-icons">list</i>Categorias</a> <br>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button style="background-color: black; color: white; border-radius: 10px; font-size: 18px;"> <i class="material-icons">assignment_ind</i>Consulta</button>
+            <div class="dropdown-content">
+                <a style="font-size: 20px;" href="#"> <i class="material-icons">list</i>Clientes</a> <br>
+                <a style="font-size: 20px;" href="#"> <i class="material-icons">list</i>Produtos</a> <br>
+                <a style="font-size: 20px;" href="#"> <i class="material-icons">list</i>Categorias</a> <br>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

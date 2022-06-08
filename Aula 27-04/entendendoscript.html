@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="n1" type="text" placeholder="Informe o número"/>
+    <button onclick="show()">Clique aqui</button>
+    <hr>
+    <p id="p1"></p>
+    
+    <script>
+        /*document.write("olá mundo")
+        var x = 20
+        var y = 10
+
+        document.write(`<br>${x} + ${y}= ${x+y}`)
+
+        if(x > y){
+            document.write(`<br>`)
+            document.write(`${x} é maior que ${y}`)
+        }
+
+        document.write(`<br>`)
+        let z = 5
+        while(z > 0){
+            document.write(`Linha ${z}<br>`)
+            z--
+        }*/
+
+        function show(){
+            var z = document.getElementById("n1").value
+            document.getElementById("p1").innerHTML = ""
+            while (z > 0) {
+                document.getElementById("p1").innerHTML += `<br>Linha ${z}`
+                z--
+            }
+            
+        }
+
+    </script>
+</body>
+</html>

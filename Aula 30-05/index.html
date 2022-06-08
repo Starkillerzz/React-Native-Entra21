@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <a href="pagina1.html" target="centro">Pagina 1</a>
+        <a href="pagina2.html" target="centro">Pagina 2</a>
+        <label id="usuariologado"></label>
+        <button onclick="logout()">Logout</button>
+    </nav>
+    <iframe src="pagina1.html" name="centro"></iframe>
+    <script>
+        var userlogado = localStorage.getItem("usuario")
+        document.getElementById("usuariologado").innerHTML = userlogado
+
+        function logout(){
+            localStorage.removeItem("usuario")
+        }
+    </script>
+</body>
+</html>

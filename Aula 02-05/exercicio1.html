@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="numero" type="number" placeholder="Insira o número"/>
+    <button onclick="calcular()">Calcular</button>  
+
+    <p id="mostrar"></p>
+
+    <script>
+        function calcular(){
+
+            let numero = document.getElementById("numero").value
+            let contador  = numero
+        
+
+            if(numero == ""){
+                alert("digite um número!")
+                document.getElementById("numero").focus()
+                return
+
+            }else{
+                numero = parseFloat(numero)
+                contador = parseFloat (contador)
+
+            }
+            while(numero > 0){
+                numero-- 
+                contador = contador + numero
+
+            }
+                document.getElementById("mostrar").innerHTML = `A soma do numero com seus antecessores é de ${contador}`
+
+            }
+
+    </script>
+
+</body>
+</html>

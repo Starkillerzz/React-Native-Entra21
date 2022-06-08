@@ -1,0 +1,2 @@
+criar uma pg que permita informar o nome e data de nascimento da pessoa. 
+Mostrar a qual signo do zodiaco a pessoa pertence

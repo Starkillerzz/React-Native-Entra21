@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <hr>
+    <div id="dados">
+        <p>Insira as Frutas que você deseja criar uma lista</p>
+        <input id="frutas" style="width: 150px;" type="text" placeholder="Insira a fruta para gravar"></input>
+        <button onclick="frutasgravar() ; limpar() ; salvarfrutas()">Gravar</button>
+    </div>
+    <script>
+       var frutas = []
+        function frutasgravar(){   
+            var fruta = document.getElementById("frutas").value
+            frutas.push(fruta)
+            
+        }
+        function limpar(){
+            document.getElementById("frutas").value = ""
+            
+        }
+
+        function salvarfrutas(){
+            localStorage.setItem("frutaslista" , frutas)
+        }
+        console.log(frutas)
+    </script>
+</body>
+</html>

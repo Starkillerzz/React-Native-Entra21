@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="nota" type="number" placeholder="Informe nota">
+
+    <button onclick="validanota()">Clique aqui</button>
+    <input type="number" id="recebeNota" readonly/>
+
+    <script>
+        function validanota(){
+            let nota = document.getElementById("nota").value 
+                if(nota == ""){
+                    alert("Insira uma nota!")
+                    document.getElementById("nota").focus()
+                    return
+                }else{
+                    nota = parseFloat(nota)
+                    if(nota < 0 ){
+                        alert("Nota não pode ser menor que 0")
+                        document.getElementById("nota").focus()
+                        return
+                    }
+                    if(nota > 10){
+                        alert("Nota não pode ser maior que 10")
+                        document.getElementById("nota").focus()
+                        return
+                    }
+                }
+
+                document.getElementById("recebeNota").value = nota
+
+        }
+
+    </script>
+</body>
+</html>

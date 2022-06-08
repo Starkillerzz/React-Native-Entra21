@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="dados">
+        <label>Informe a sua data de nascimento</label>
+        <input id="dataNascimento" type="date" ></input> <br>
+        <button onclick="zodiaco()">Descobrir o seu signo</button>
+        <hr>
+        <label id="resultado" ></label>
+    </div>
+    <script>
+
+      function zodiaco(){
+          var d = new Date(document.getElementById("dataNascimento").value)
+          let mes = d.getMonth()+1
+          let dia = d.getDate()+1
+          var mensagem = ""
+           
+            if((dia > 20 & mes == 1) || (dia < 19 & mes == 2)){
+                mensagem = "Aquário"
+
+            }else if((dia > 18 & mes == 2) || (dia < 21 & mes == 3)){
+                mensagem = "Peixes"
+
+            }if((dia > 20 & mes == 3)|| (dia < 20 & mes == 4)){
+                mensagem = "Áries"
+
+            }else if((dia > 19 & mes == 4)|| (dia < 21 & mes == 5)){
+                mensagem="Touro"
+
+            }if((dia > 20 & mes == 5) || (dia < 21 & mes == 6)){
+                mensagem = "Gêmeos"
+
+            }else if((dia > 20 & mes == 6) || (dia < 23 & mes == 7)){
+                mensagem = "Câncer"
+
+            }if((dia > 22 & mes == 7  ) || (dia < 23 & mes == 8)){
+                mensagem = "Leão"
+
+            }else if((dia > 22 & mes == 8 ) || (dia < 23 & mes == 9)){
+                mensagem="Virgem"
+
+            }if((dia > 22 & mes == 9 ) || (dia < 23 & mes == 10)){
+                mensagem="Libra"
+
+            }else if((dia > 22 & mes == 10 ) || (dia < 21 & mes == 11)){
+                mensagem="Escorpião"
+            }if((dia > 21 & mes == 11 ) || (dia < 22 & mes == 12)){
+                mensagem="Sagitário" 
+            }else if((dia > 21 & mes == 12 ) || (dia < 20 & mes == 1)){
+                mensagem="Capricórnio"
+            }   
+            
+            document.getElementById("resultado").innerHTML = ` O seu signo é: ${mensagem}`
+
+          
+
+          
+      }  
+      
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+{
+    "venda": [
+        {
+            "cliente": {
+                "id": 1,
+                "nome": "fulano",
+                "email": "fulano@gmail.com",
+                "telefone": "123456"
+            },
+            "produtos": [
+                {
+                    "id": 1,
+                    "item": "banana",
+                    "quantidade": 3,
+                    "preço": 4.5
+                },
+                {
+                    "id": 2,
+                    "item": "maça",
+                    "quantidade": 5,
+                    "preço": 3
+                }
+            ]
+        },
+        {
+            "cliente": {
+                "id": 2,
+                "nome": "fulano",
+                "email": "fulano@gmail.com",
+                "telefone": "123456"
+            },
+            "produtos": [
+                {
+                    "id": 1,
+                    "item": "uva",
+                    "quantidade": 4,
+                    "preço": 4.5
+                },
+                {
+                    "id": 2,
+                    "item": "melancia",
+                    "quantidade": 5,
+                    "preço": 7
+                }
+            ]
+        }
+    ]
+}

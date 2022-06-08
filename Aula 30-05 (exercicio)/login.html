@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Faça Seu Login!</p>
+    <hr>
+    <label>Insira seu email</label>
+    <input type="email" id="email"></input> <br>
+    <label>Insira sua senha</label>
+    <input type="password" id="senha"></input> <br>
+    <button onclick="gravarLogin()">Login</button>
+
+    <script>
+        function gravarLogin(){
+            localStorage.setItem("login" , document.getElementById("email").value)
+            window.location.href = "frutas.html"
+            
+        }
+    </script>
+</body>
+</html>

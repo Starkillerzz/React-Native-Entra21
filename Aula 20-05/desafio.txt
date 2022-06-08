@@ -1,0 +1,11 @@
+criar um objeto produto com os seguintes atributos: 
+descrição, preço, quantidade. 
+Crie o método para calcular o valor do item
+
+coloque pelo menos 5 produtos deste mesmo tipo em um array
+calcule o valor do total dos produtos do array.
+
+desafio 2 
+dado o vetor numero = [1 ,30 ,40 ,4 ,5 , 6, 10]
+-encontre o maior valor
+-encontre o menor valor

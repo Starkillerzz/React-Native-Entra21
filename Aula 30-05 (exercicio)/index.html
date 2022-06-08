@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frutas</title>
+    <style>
+        iframe{
+            width: 100%;
+            height: 800px;
+        }
+        .botaoLogin{
+         text-decoration: none;
+         color:black;
+        }
+    </style>
+</head>
+<body>
+    
+    <nav>
+        <a id="frutas" href="frutas.html" target="centro">Insira as Frutas</a>
+        <a id="frutaslista" href="frutaslista.html" target="centro">Lista de Frutas</a>
+        <label id="usuariologado"></label>
+        <button id="login">
+            <a id="escondelogin" class="botaoLogin" href="login.html" target="centro">Login</a>
+            
+        </button>
+        <button id="logout" onclick="logout()">Logout</button>
+        
+    </nav>
+    <div>
+        <p>Bem vindo!!</p>
+    </div>
+    <iframe  src="login.html" name="centro"></iframe>
+    <script>
+        var usuario = localStorage.getItem("login")
+        document.getElementById("usuariologado").innerHTML  = usuario
+
+            if(localStorage.getItem("login") != null){
+                document.getElementById("logout").style = "display: block"
+                document.getElementById("login").style = "display: none"
+            }else{
+                document.getElementById("login").style = "display: block"
+                document.getElementById("logout").style = "display: none"
+                document.getElementById("frutas").style = "display: none"
+                document.getElementById("frutaslista").style = "display: none"
+
+
+            }
+        
+
+        function logout(){
+            localStorage.removeItem("login")
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<p style="font-size: 30px; text-align: center; background-color: #ff9900; font-style: oblique; font-family: 'Times New Roman', Times, serif;">Churrasco dos Amigos</p>
+<hr>
+<style>
+body{
+    background-color: #ffcc66;
+    
+}
+
+</style>
+<body>
+
+    <input id="pessoas" type="number" style="width: 350px;" placeholder="Insira o número de pessoas do churrasco"/> <br>
+    <input id="gramas" type="number" style="width: 350px;" placeholder="Insira quantas gramas por pessoa será consumido"/> <br>
+    <input id="carne" type="text" style="width: 350px;" placeholder="Insira qual o tipo de carne que será comprado"/> <br>
+    <input id="precoPeso" type="number" style="width: 350px;" placeholder="Insira o preço do kg da carne"/> <br>
+
+    <button onclick="churrasco()">Calcular</button>
+
+    <p id="resultado"></p>
+
+    <!--<img alt="https://agrosaber.com.br/wp-content/uploads/2020/02/Banner_Churrasco001.jpg" src="Churrasco dos amigos" style="align-content: center;"> -->
+
+    <script>
+        function churrasco(){
+            let pessoas = document.getElementById("pessoas").value 
+            let gramas = document.getElementById("gramas").value 
+            let carne = document.getElementById("carne").value 
+            let precoPeso = document.getElementById("precoPeso").value 
+
+
+            
+            let pesoTotal = gramas*pessoas
+                pesoTotal = (pesoTotal/1000)
+
+            let precoTotal = (precoPeso*pesoTotal)
+            let taxaAssador = (precoTotal*(30/100))
+
+            if(pessoas == ""){
+                alert("Digite o número de pessoas!")
+                document.getElementById("pessoas").focus()
+                return
+            }else{
+                pessoas = parseFloat(pessoas)
+                
+            }
+            if(gramas == ""){
+                alert("Digite o número de Gramas!")
+                document.getElementById("gramas").focus()
+                return
+            }else{
+                gramas = parseFloat(gramas)
+
+            }    
+            if(carne == ""){
+                alert("Digite o tipo da carne!")
+                document.getElementById("carne").focus()
+                return
+            }    
+            if(precoPeso == ""){
+                alert("Digite o preço do peso!")
+                document.getElementById("precoPeso").focus()
+                return
+            }else{
+                precoPeso = parseFloat(precoPeso)    
+                
+            }    
+                
+                if(pessoas > 10){
+                    document.getElementById("resultado").innerHTML = `Será necessário comprar ${pesoTotal}Kg de ${carne}. Isso irá custar R$${precoTotal}. 
+                    E para o assador será necessário pagar R$${taxaAssador} a mais.`
+
+
+
+                }else{
+
+                    document.getElementById("resultado").innerHTML = `Será necessário comprar ${pesoTotal}Kg de ${carne}. Isso irá custar R$${precoTotal}.`
+
+                }
+
+                }
+
+    
+
+
+
+
+
+        
+
+
+    </script>
+ 
+
+
+
+
+</body>
+</html>

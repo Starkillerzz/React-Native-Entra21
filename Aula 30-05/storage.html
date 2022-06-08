@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <input type="email" placeholder="Informe seu email"  />
+        <input type="password" placeholder="informe sua senha" />
+    </div>
+    <button onclick="login()">login</button>
+
+    <script>
+        function login(){
+            localStorage.setItem("usuario" , document.getElementsByTagName("input")[0].value)
+        }
+    </script>
+</body>
+</html>
