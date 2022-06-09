@@ -11,7 +11,7 @@
     <label>Digite um codigo de cliente</label>
 <input type="number" id="idcliente" />
 <button onclick="pesquisar()">Pesquisar</button>
-<button onclick="excluir()">Excluir</button>
+<button onclick="excluir(limpar)">Excluir</button>
 <hr>
 <input id="nome" />
 <input id="email" />
@@ -65,11 +65,12 @@
         document.getElementById("fone").value = ""
     }
 
-    function excluir(){
+    function excluir(callback){
         var idpesquisa = document.getElementById("idcliente").value
         
         fetch(`http://localhost:3000/clientes/${idpesquisa}` , {method: 'DELETE'})
            .then(data => data.json())
+           callback()
     }
 </script>
 </body>
