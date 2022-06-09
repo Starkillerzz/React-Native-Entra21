@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Alterar dados</h1>
+    <hr>
+    <label>Digite um codigo de cliente</label>
+<input type="number" id="idcliente" />
+<button onclick="pesquisar()">Pesquisar</button>
+<button onclick="excluir()">Excluir</button>
+<hr>
+<input id="nome" />
+<input id="email" />
+<input id="fone" />
+<button onclick="alterar(limpar)">Gravar e alterar</button>
+
+
+<script>
+    function pesquisar(){
+       var idpesquisa = document.getElementById("idcliente").value 
+       fetch (`http://localhost:3000/clientes/${idpesquisa}`)
+       .then(data => data.json())
+       .then(result => mostrar(result))
+
+       function mostrar(result){
+           clientes = []
+           clientes = result
+           
+           document.getElementById("nome").value = `${clientes.nome}`
+           document.getElementById("email").value = `${clientes.email}`
+           document.getElementById("fone").value = `${clientes.fone}`
+           
+        
+       }   
+    }
+    function alterar(callback){
+        var idpesquisa = document.getElementById("idcliente").value
+        const clientes = {
+            nome: "",
+            email: "",
+            fone: ""
+        }
+            clientes.nome = document.getElementById("nome").value
+            clientes.email = document.getElementById("email").value
+            clientes.fone = document.getElementById("fone").value
+        
+        const options = {
+                method: 'PUT',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(clientes)
+        }
+        
+        fetch(`http://localhost:3000/clientes/${idpesquisa}` , options)
+           .then(data => data.json())
+            callback()
+       
+    }
+    function limpar(){
+        document.getElementById("nome").value = ""
+        document.getElementById("email").value = ""
+        document.getElementById("fone").value = ""
+    }
+
+    function excluir(){
+        var idpesquisa = document.getElementById("idcliente").value
+        
+        fetch(`http://localhost:3000/clientes/${idpesquisa}` , {method: 'DELETE'})
+           .then(data => data.json())
+    }
+</script>
+</body>
+</html>

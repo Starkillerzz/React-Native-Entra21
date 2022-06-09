@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Home</h1>
+<label>Digite um codigo de cliente</label>
+<input type="number" id="idcliente" />
+<button onclick="pesquisar()">Pesquisar</button>
+<hr>
+<p id="resultado"></p>
+
+<script>
+    function pesquisar(){
+       var idpesquisa = document.getElementById("idcliente").value 
+       fetch (`http://localhost:3000/clientes/${idpesquisa}`)
+       .then(data => data.json())
+       .then(result => mostrar(result))
+
+       function mostrar(result){
+           clientes = []
+           clientes = result
+           
+           document.getElementById("resultado").innerHTML = `${clientes.nome} / ${clientes.email} / ${clientes.fone}`
+           
+        
+       }
+       
+    }
+</script>
+</body>
+</html>

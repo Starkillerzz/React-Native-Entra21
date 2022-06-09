@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="load(display)">Mostrar clientes</button>
+    <div>
+        <p id="mostrar"></p>
+    </div>
+
+    <script>
+        function load(callback){
+            fetch("http://localhost:3000/clientes")
+            .then (x => x.json())
+            .then (y => display(y))
+            callback()
+        }
+            function display(dados){
+                var clientes = []
+                clientes = dados
+                console.log(clientes)
+                
+                var paragrafo = ""
+                for(let i = 0 ; i<clientes.length ; i++){
+                    paragrafo +=`<p>${clientes[i].nome}</p>
+                                    <p>${clientes[i].email}</p>
+                                    <p>${clientes[i].fone}</p>`
+                }
+                document.getElementById("mostrar").innerHTML = paragrafo
+            }
+            
+    </script>
+</body>
+</html>
