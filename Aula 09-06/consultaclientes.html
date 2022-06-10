@@ -4,10 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+      .container{
+          display: flex;
+          justify-content: space-between;
+      }  
+    </style>
 </head>
 <body onload="load(dados)">
     <h1>Lista de Clientes</h1>
     <hr>
+   <div class="container">
+    <div>
     <table>
         <thead>
             <tr>
@@ -15,12 +23,26 @@
                 <th>Nome</th>
                 <th>Email</th>
                 <th>Fone</th>
+                <th>Excluir</th>
+                <th>Editar</th>
             </tr>
         </thead>
         <tbody id="dados">
 
         </tbody>
     </table>
+</div>
+
+<div id="alterar">
+
+    <input id="id" />
+    <input id="nome" />
+    <input id="email" />
+    <input id="fone" />
+    
+    <button onclick="alteracao()">Gravar e alterar</button>
+</div>
+</div>
     <script>
         function load(){
             fetch("http://localhost:3000/clientes")
@@ -40,11 +62,64 @@
                       <td>${clientes[i].nome}</td>
                       <td>${clientes[i].email}</td>
                       <td>${clientes[i].fone}</td>
+                      <td> <button onclick="excluir(${clientes[i].id})">Excluir</button> </td>
+                      <td> <button onclick="mostrar(${clientes[i].id})">Alterar</button> </td>
                   </tr>`
 
             }
             document.getElementById("dados").innerHTML = linha;
         }
+        function excluir(idcliente){
+
+            var idpesquisa = idcliente
+        
+        fetch(`http://localhost:3000/clientes/${idpesquisa}` , {method: 'DELETE'})
+           .then(data => data.json())
+            
+        }
+        
+        function mostrar(alter) {
+            var alterar = alter
+            fetch(`http://localhost:3000/clientes/${alterar}`)
+            .then(data => data.json())
+            .then(x => input(x))
+            
+            function input(x){
+    
+                tela = []
+                tela = x
+
+                document.getElementById("id").value = `${x.id}`
+                document.getElementById("nome").value = `${x.nome}`
+                document.getElementById("email").value = `${x.email}`
+                document.getElementById("fone").value = `${x.fone}`
+            }
+
+        }
+        
+        function alteracao(){
+            var alterar = document.getElementById("id").value
+        const clientes = {
+            nome: "",
+            email: "",
+            fone: ""
+        }
+            clientes.nome = document.getElementById("nome").value
+            clientes.email = document.getElementById("email").value
+            clientes.fone = document.getElementById("fone").value
+        
+        const options = {
+                method: 'PUT',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(clientes)
+        }
+        
+        fetch(`http://localhost:3000/clientes/${alterar}` , options)
+           .then(data => data.json())
+            
+       
+    }
+        
             
     </script>
 </body>
