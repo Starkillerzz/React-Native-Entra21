@@ -1,4 +1,15 @@
-import soma from "./calculos"
+function soma (n1: number, n2: number): number{
+    return n1+n2
+}
 
-var z = soma (10,20)
-console.log(z)
+function subtrair(n1: number, n2: number): number{
+    return n1-n2
+}
+function multiplicar(n1: number, n2: number): number{
+    return n1*n2
+}
+function dividir(n1: number, n2: number): number{
+    return n1/n2
+}
+
+export {soma, subtrair, multiplicar, dividir}

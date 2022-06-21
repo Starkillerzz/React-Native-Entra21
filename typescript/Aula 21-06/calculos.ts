@@ -1,4 +1,4 @@
- export default function soma (n1: number, n2: number): number{
+/**function soma (n1: number, n2: number): number{
     return n1+n2
 }
 
@@ -10,4 +10,5 @@ function multiplicar(n1: number, n2: number): number{
 }
 function dividir(n1: number, n2: number): number{
     return n1/n2
-}
+}*/
+
