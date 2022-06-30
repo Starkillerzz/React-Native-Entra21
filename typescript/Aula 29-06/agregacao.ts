@@ -25,7 +25,20 @@ class ItemVenda{
     }
 }
 
-let it1 = new ItemVenda(1, prod1, 10)
+let it1:[] = []
+it1 = new ItemVenda(1, prod1, 10)
 let it2 = new ItemVenda(2, prod2, 15)
 
 console.log(it1)
+
+class Venda{
+    id:number
+    itens: ItemVenda[]
+
+    constructor(id: number, itemvenda: ItemVenda[]){
+        this.id = id
+        this.itens = itemvenda
+    }
+}
+
+let v1 = new Venda(1, it1)
