@@ -1,0 +1,16 @@
+create table produto (
+	id serial primary key,
+	descricao varchar(20),
+	preco float
+);
+
+
+insert into produto (descricao, preco)
+values ('alcatra', 50);
+
+insert into produto (descricao, preco)
+values ('palmito', 10);
+
+
+select * from produto;
+
