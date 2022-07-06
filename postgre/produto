@@ -8,9 +8,16 @@ create table produto (
 insert into produto (descricao, preco)
 values ('alcatra', 50);
 
-insert into produto (descricao, preco)
-values ('palmito', 10);
+insert into produto (descricao, preco, categoria_id)
+values ('palmito', 10, 2);
 
+alter table produto
+add categoria_id int;
 
-select * from produto;
+alter table produto
+add constraint fk_categoria foreign key(categoria_id)
+references categoria(id);
+
+select * from produto;						'					'
+
 
