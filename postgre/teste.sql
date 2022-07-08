@@ -1,0 +1,17 @@
+create table categoria (
+	id serial primary key,
+	descricao varchar(20)
+);
+
+alter table categoria
+add constraint pk_categoria primary key (id);
+
+insert into categoria (id, descricao)
+values(1, 'Carnes');
+
+
+insert into categoria (descricao)
+values('Verduras');
+
+
+select * from categoria;
