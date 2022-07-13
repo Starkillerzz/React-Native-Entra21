@@ -1,0 +1,14 @@
+CREATE TABLE funcionarios(
+	id serial PRIMARY KEY,
+	nome varchar (50),
+	id_gerente int,
+	FOREIGN KEY (id_gerente) REFERENCES funcionarios(id)	
+);
+
+INSERT INTO funcionarios (nome, id_gerente) values ('patricia', 1);
+
+SELECT ff.nome AS funcionarios, fg.nome AS Gerente
+FROM funcionarios ff, funcionarios fg
+WHERE ff.id_gerente = fg.id
+
+SELECT * FROM funcionarios
