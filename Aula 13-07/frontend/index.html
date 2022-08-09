@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="idcliente" type="text">
+    <button onclick="consultar()">Consultar</button>
+    <hr>
+    <p id="mostrar"></p>
+
+    <script>
+        
+        function consultar(){
+            var idcliente = document.getElementById("idcliente").value
+
+            fetch(`http://localhost:8080/clientes/${idcliente}`)
+        .then(data => data.json())
+        .then(result => {
+            
+            document.getElementById("mostrar").innerHTML = `${result.nome}`
+        })
+        
+        
+      
+    }
+    
+
+        
+    </script>
+</body>
+</html>
