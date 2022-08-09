@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login de Usuários</title>
+    <script src="/jwtdecode.js"></script>
+</head>
+<body>
+    <div>
+        <label>Email</label>
+        <input type="text" placeholder="informe email" id="email"/>
+        <label>Senha</label>
+        <input type="password" placeholder="informe senha" id="senha"/>
+        <button onclick="logar(msglogin)">Login</button>
+        <button onclick="tokendecodificado()">Decodificar</button>
+    </div>
+
+    <p id="mostrar"></p>
+    <p id='mostrar2'></p>
+    <p id="mostrar3"></p>
+
+    <script>
+        function logar(callback){
+            var user = {
+                email: document.getElementById('email').value,
+                senha: document.getElementById('senha').value
+            }
+            
+          fetch('http://localhost:8080/usuarios/login', {
+               method: 'POST',
+               headers: {"Content-type": "application/json"},
+               body: JSON.stringify(user)
+
+            })
+            
+            .then(data => data.json())
+            .then(result => localStorage.setItem('token', result.token))
+
+              callback()
+              
+        }
+        function tokendecodificado(){
+            var tokendecode = jwt_decode(localStorage.getItem('token'))
+            var string = JSON.stringify(tokendecode)
+            console.log(tokendecode)
+             
+            document.getElementById("mostrar").innerHTML = tokendecode.nome
+            document.getElementById("mostrar2").innerHTML = tokendecode.email
+            document.getElementById("mostrar3").innerHTML = tokendecode.perfil
+
+        }
+
+        function msglogin(){
+
+            var tokendecode = jwt_decode(localStorage.getItem('token'))
+            var string = JSON.stringify(tokendecode)
+            console.log(tokendecode)
+             
+            document.getElementById("mostrar").innerHTML = tokendecode.nome
+            document.getElementById("mostrar2").innerHTML = tokendecode.email
+            document.getElementById("mostrar3").innerHTML = tokendecode.perfil
+        }
+    </script>
+</body>
+</html>
+
