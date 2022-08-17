@@ -38,7 +38,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var express = require("express");
 var datasource_1 = require("./datasource");
-var Carros_1 = require("./entity/Carros");
+var User_1 = require("./entity/User");
 var router = express.Router();
 datasource_1.default
     .initialize()
@@ -57,7 +57,7 @@ router.get('/', function (req, res) { return __awaiter(void 0, void 0, void 0, f
     var users;
     return __generator(this, function (_a) {
         switch (_a.label) {
-            case 0: return [4 /*yield*/, datasource_1.default.getRepository(Carros_1.Carros).find()];
+            case 0: return [4 /*yield*/, datasource_1.default.getRepository(User_1.User).find()];
             case 1:
                 users = _a.sent();
                 res.json(users);
@@ -69,14 +69,14 @@ router.post('/', function (req, res) { return __awaiter(void 0, void 0, void 0, 
     var user, results;
     return __generator(this, function (_a) {
         switch (_a.label) {
-            case 0: return [4 /*yield*/, datasource_1.default.getRepository(Carros_1.Carros).create(req.body)];
+            case 0: return [4 /*yield*/, datasource_1.default.getRepository(User_1.User).create(req.body)];
             case 1:
                 user = _a.sent();
-                return [4 /*yield*/, datasource_1.default.getRepository(Carros_1.Carros).save(user)];
+                return [4 /*yield*/, datasource_1.default.getRepository(User_1.User).save(user)];
             case 2:
                 results = _a.sent();
                 return [2 /*return*/, res.send({
-                        mensagem: "Carro inserido com sucesso!"
+                        mensagem: "usuario inserido com sucesso!"
                     })];
         }
     });
@@ -85,11 +85,11 @@ router.put('/:id', function (req, res) { return __awaiter(void 0, void 0, void 0
     var user, results;
     return __generator(this, function (_a) {
         switch (_a.label) {
-            case 0: return [4 /*yield*/, datasource_1.default.getRepository(Carros_1.Carros).findOneBy({ id: req.params.id })];
+            case 0: return [4 /*yield*/, datasource_1.default.getRepository(User_1.User).findOneBy({ id: req.params.id })];
             case 1:
                 user = _a.sent();
-                datasource_1.default.getRepository(Carros_1.Carros).merge(user, req.body);
-                return [4 /*yield*/, datasource_1.default.getRepository(Carros_1.Carros).save(user)];
+                datasource_1.default.getRepository(User_1.User).merge(user, req.body);
+                return [4 /*yield*/, datasource_1.default.getRepository(User_1.User).save(user)];
             case 2:
                 results = _a.sent();
                 return [2 /*return*/, res.send(results)];
@@ -100,7 +100,7 @@ router.delete('/:id', function (req, res) { return __awaiter(void 0, void 0, voi
     var results;
     return __generator(this, function (_a) {
         switch (_a.label) {
-            case 0: return [4 /*yield*/, datasource_1.default.getRepository(Carros_1.Carros).delete(req.params.id)];
+            case 0: return [4 /*yield*/, datasource_1.default.getRepository(User_1.User).delete(req.params.id)];
             case 1:
                 results = _a.sent();
                 return [2 /*return*/, res.send(results)];

@@ -1,20 +1,17 @@
 import * as express from "express"
-import {Request, Response} from "express"
-import { convertTypeAcquisitionFromJson } from "typescript"
-import dataSource from './datasource'
-import { User } from "./entity/User"
-import { Carros } from "./entity/carros"
-const usuarios = require ('./app')
-const carros = require ('./RotasCarros')
+import usuarios from './usuarios'
+import carros from './RotasCarros'
 
-dataSource
+
+/* NÃO PRECISA USAR DATASOURCE AQUI PORQUE TEM NAS ROTAS
+    dataSource
     .initialize()
     .then(() => {
         console.log("Data Source has been initialized!")
     })
     .catch((err) => {
         console.error("Error during Data Source initialization:", err)
-    })
+    })*/
 
 const app = express()
 app.use(express.json())
