@@ -1,0 +1,13 @@
+CREATE TABLE usuario (
+	id serial primary key,
+	nome varchar (20),
+	sobrenome varchar (20),
+	email varchar (20),
+	datanasicmento date,
+	telefone float,
+	endereco varchar (100),
+	senha int	
+
+);
+
+select * from usuario;

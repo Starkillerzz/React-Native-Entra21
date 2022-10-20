@@ -1,0 +1,23 @@
+CREATE TABLE estabelecimentos (
+	id serial primary key,
+	nome varchar (20),
+	endereco varchar (50),
+	reserva boolean,
+	estacionamento boolean,
+	pets boolean,
+	avaliacao int
+	
+
+);
+
+
+
+alter table estabelecimentos
+add tipo_id int;
+
+
+ALTER TABLE estabelecimentos
+ADD CONSTRAINT fk_tipo FOREIGN KEY (tipo_id)
+REFERENCES tipos (id);
+
+SELECT * FROM estabelecimentos;

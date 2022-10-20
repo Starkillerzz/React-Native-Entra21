@@ -1,0 +1,27 @@
+CREATE TABLE usuario (
+	id serial primary key,
+	nome varchar (20),
+	sobrenome varchar (20),
+	email varchar (20),
+	datanasicmento date,
+	telefone float,
+	endereco varchar (100),
+	senha varchar (10)	
+
+);
+
+
+INSERT INTO usuario (nome, sobrenome, email, telefone, endereco, senha, dataNascimento)
+VALUES ('Natalia', 'Piloto', 'rodrigo@mail.com', 33873467, 'rua august hass 299', 123456, '19980930');
+
+SELECT nome FROM usuario WHERE id=1;
+
+ALTER TABLE usuario
+DROP COLUMN dataNascimento;
+
+ALTER TABLE usuario
+ADD COLUMN dataNascimento date;
+
+DELETE FROM usuario;
+
+SELECT * FROM usuario;

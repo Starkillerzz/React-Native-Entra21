@@ -1,0 +1,25 @@
+CREATE TABLE tipos(
+	id serial primary key, 
+	tipo varchar (20)
+);
+
+INSERT INTO tipos (tipo)
+VALUES('pousadas');
+
+INSERT INTO tipos (tipo)
+VALUES('farmácias');
+
+INSERT INTO tipos (tipo)
+VALUES('mercados');
+
+INSERT INTO tipos (tipo)
+VALUES('estacionamentos');
+
+INSERT INTO tipos (tipo)
+VALUES('postos de gasolina');
+
+INSERT INTO tipos (tipo)
+VALUES('hospital');
+
+SELECT * FROM tipos;
+
